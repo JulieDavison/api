@@ -8,9 +8,10 @@
 
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
   <script type="text/javascript">
     // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
-    var title = "space+jam";
+    var title = "star+wars";
     var queryURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=trilogy";
 
     $.ajax({
@@ -27,6 +28,17 @@
     var y = 10;
     var z = 13;
     console.log("We can also assign some variables and do some arithmetic while we wait too: 2 + 10 + 13 = ", x + y + z);
+    
+    axios({
+        url: 'http://www.omdbapi.com/?apikey=trilogy&t=star+wars',
+        method: "GET"
+    })
+    .then(function (response) {
+        console.log(response.data)
+    })
+    .catch(function (err) {
+        console.error(err)
+    })
   </script>
 
 </body>
