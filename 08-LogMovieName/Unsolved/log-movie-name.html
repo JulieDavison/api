@@ -19,7 +19,7 @@
   <div class="container">
     <h1>Movie Search</h1>
 
-     <!-- Rendered Buttons will get Dumped Here  -->
+    <!-- Rendered Buttons will get Dumped Here  -->
     <div id="buttons-view"></div>
 
     <form id="movie-form">
@@ -37,8 +37,9 @@
 
       // Generic function for capturing the movie name from the data-attribute
       function alertMovieName() {
+        var movieName = $(this).attr("data-name");
 
-        // YOUR CODE GOES HERE!!!
+        alert(movieName);
 
       }
 
@@ -67,7 +68,7 @@
       }
 
       // This function handles events where one button is clicked
-      $("#add-movie").on("click", function(event) {
+      $("#add-movie").on("click", function (event) {
         event.preventDefault();
 
         // This line grabs the input from the textbox
