@@ -22,7 +22,7 @@
       // STEP TWO: make a variable named state and then store the image's data-state into it.
       // Use the .attr() method for this.
 
-      // ============== FILL IN CODE HERE FOR STEP TWO =========================
+      var state = $(this).attr("data-state");
 
       // CODE GOES HERE
 
@@ -37,7 +37,13 @@
       // ============== FILL IN CODE HERE FOR STEP THREE =========================
 
       // CODE GOES HERE
-
+      if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
       // ==============================================
 
       // STEP FOUR: open the file in the browser and click on the images.
